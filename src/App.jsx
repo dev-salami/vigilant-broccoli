@@ -83,10 +83,10 @@ function Page() {
       <section className="-mx-6">
         <img
           alt="headerBg"
-          className="  w-full absolute -z-10 inset-0  md:max-h-[700px] object-cover"
+          className="  w-full absolute -z-10 inset-0    h-[1295px] object-cover"
           src={headerBg}
         />
-        <div className="md:h-[700px]  ">
+        <div className="h-[1295px]  ">
           <nav className="flex p-4 font-semibold justify-between items-center">
             <div>
               <img className=" w-20 relative" alt="ps" src={logo} />
@@ -109,12 +109,12 @@ function Page() {
             </button>
           </nav>
           <main className="h-full  flex justify-center items-center py-28 lg:pb-40">
-            <div className="w-fit mx-auto">
-              <h2 className="text-sm sm:text-base md:text-lg text-white font-bold">
-                Witness the creation of something amazing The
+            <div className=" px-12 max-w-screen-md mx-auto">
+              <h2 className="text-sm sm:text-base md:text-lg pl-12 text-white font-bold">
+                Witness the creation of something amazing
               </h2>
-              <p className="text-2xl md:text-4xl text-center font-bold">
-                Beginning Of Something Propably <br /> Truly Super Epic{" "}
+              <p className="text-3xl md:text-5xl text-center font-bold">
+                The Beginning Of Something Propably <br /> Truly Super Epic{" "}
               </p>
             </div>
           </main>
@@ -190,8 +190,10 @@ function Page() {
           idea in man am done bro im outta idea fr just give me something pwese
           any thing i i want ideas gosh
         </p>
-        <div className="flex flex-wrap justify-center items-center gap-6 max-w-screen-sm mx-auto">
-          <button className="bg-[#FF6700] px-6 py-0.5 rounded-full">ALL</button>
+        <div className="flex text-[#FF6700] font-semibold flex-wrap justify-center items-center gap-6 max-w-screen-sm mx-auto">
+          <button className="bg-[#FF6700] text-white    px-6 py-0.5 rounded-full">
+            ALL
+          </button>
           <button className="border px-6 py-0.5 rounded-full">APP</button>
           <button className="border px-6 py-0.5 rounded-full">LARAVEL</button>
           <button className="border px-6 py-0.5 rounded-full">WP THEME</button>
@@ -200,14 +202,14 @@ function Page() {
           <button className="border px-6 py-0.5 rounded-full">PHP</button>
         </div>
 
-        <main className="gap-8 grid grid-cols-1 sm:grid-cols-2 mt-10    ">
+        <main className="gap-8 md:gap-16 grid grid-cols-1 sm:grid-cols-2 mt-10  px-8   ">
           <NFTCard />
           <NFTCard /> <NFTCard /> <NFTCard /> <NFTCard /> <NFTCard />
           <NFTCard /> <NFTCard />
         </main>
 
         <div className="w-fit mx-auto mt-8">
-          <button className="bg-[#FF6700] text-white  px-16 py-2 rounded-md ">
+          <button className="bg-[#FF6700] h-[71px] text-white  px-16 py-2 rounded-[4px] ">
             View All
           </button>
         </div>
@@ -225,16 +227,22 @@ function Page() {
         </main>
       </section>
       <section className="mt-20 -mx-6">
-        <div className="relative w-full max-w-screen-md  mx-auto h-auto">
-          <img className=" relative" alt="contactBg" src={contactBg} />
-          <div className="absolute top-1/2 font-bold text-base md:text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-white text-center">
-            <p>Have Something diiferent in mind?</p>
-            <p className="my-4">
-              Do you want a script that we dont have listed?{" "}
-            </p>
-            <button className="bg-[#FF6700] text-white w-fit px-16 py-2 rounded-md ">
-              Contact Us
-            </button>
+        <div className="relative w-full border   mx-auto h-[806px]">
+          <img
+            className="h-[806px] relative object-cover"
+            alt="contactBg"
+            src={contactBg}
+          />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2 font-bold text-base md:text-xl  text-white text-center">
+            <div className="-mx-12">
+              <p>Have Something diiferent in mind?</p>
+              <p className="my-4">
+                Do you want a script that we dont have listed?{" "}
+              </p>
+              <button className="bg-[#FF6700] text-white w-fit px-12 py-2 rounded-md ">
+                Contact Us
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -265,7 +273,7 @@ export default Page;
 
 const NFTCard = () => {
   return (
-    <div className="flex justify-center items-center w-fit mx-auto  flex-col xl:flex-row shadow-xl shadow-gray-300   rounded-xl  gap-4 p-4">
+    <div className="flex justify-center items-center w-fit mx-auto  flex-col xl:flex-row shadow-all   border     rounded-xl  gap-4 p-4">
       <img className=" relative" alt="web3" src={web3} />
       <div className="flex flex-col gap-2">
         <h2>Haven1 clone</h2>
@@ -289,7 +297,7 @@ const NFTCard = () => {
 const StaffCard = ({ staffDetail, reverse }) => {
   return (
     <div
-      className={`flex flex-col-reverse justify-between gap-8 items-center ${
+      className={`flex flex-col-reverse justify-between gap-8 mt-40 items-center ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
