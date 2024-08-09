@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ps from "./assets/ps.svg";
 import web3 from "./assets/web3.svg";
 import appDev from "./assets/appDev.svg";
@@ -12,8 +12,10 @@ import designer from "./assets/designer.svg";
 import contactBg from "./assets/bg-contact.svg";
 import headerBg from "./assets/headerBg.jpg";
 import logo from "./assets/KayPHP.svg";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Page() {
+  const [open, setOpen] = useState(false);
   const staffsArray = [
     {
       name: "Abdulfatah Abdullahi ",
@@ -57,23 +59,44 @@ function Page() {
   ];
   return (
     <div className=" px-6 max-w-screen-2xl mx-auto">
+      {open && (
+        <div className="fixed inset-0 bg-white z-20">
+          <div className="flex flex-col gap-8 text-xl font-semibold justify-center items-center mt-20">
+            <button>Courses</button>
+            <button>Services</button>
+            <button>Demos</button>
+            <button className="bg-[#FF6700] text-white  px-8 py-2 rounded-md ">
+              Contact Us
+            </button>
+            <button className="border-[#FF6700] border    px-8 py-2 rounded-md ">
+              Help Me
+            </button>
+          </div>
+          <button
+            onClick={() => setOpen((prev) => !prev)}
+            className="absolute top-4 right-4"
+          >
+            <FaTimes size={25} />
+          </button>
+        </div>
+      )}
       <section className="-mx-6">
         <img
           alt="headerBg"
-          className="  w-full absolute -z-10 inset-0  max-h-[700px] object-cover"
+          className="  w-full absolute -z-10 inset-0  md:max-h-[700px] object-cover"
           src={headerBg}
         />
-        <div className="h-[700px]  ">
+        <div className="md:h-[700px]  ">
           <nav className="flex p-4 font-semibold justify-between items-center">
             <div>
               <img className=" w-20 relative" alt="ps" src={logo} />
             </div>
-            <div className="flex gap-6">
+            <div className="md:flex hidden gap-6">
               <button>Courses</button>
               <button>Services</button>
               <button>Demos</button>
             </div>
-            <div className="flex gap-4">
+            <div className="md:flex hidden gap-4">
               <button className="bg-[#FF6700] text-white  px-8 py-2 rounded-md ">
                 Contact Us
               </button>
@@ -81,13 +104,16 @@ function Page() {
                 Help Me
               </button>
             </div>
+            <button onClick={() => setOpen(true)} className="flex md:hidden ">
+              <FaBars size={25} />
+            </button>
           </nav>
-          <main className="h-full border flex justify-center items-center pb-40">
+          <main className="h-full  flex justify-center items-center py-28 lg:pb-40">
             <div className="w-fit mx-auto">
-              <h2 className="text-lg text-white font-bold">
+              <h2 className="text-sm sm:text-base md:text-lg text-white font-bold">
                 Witness the creation of something amazing The
               </h2>
-              <p className="text-4xl text-center font-bold">
+              <p className="text-2xl md:text-4xl text-center font-bold">
                 Beginning Of Something Propably <br /> Truly Super Epic{" "}
               </p>
             </div>
@@ -120,37 +146,37 @@ function Page() {
           <div className=" gap-8 grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3  text-white ">
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={ps} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
                 UI/UX
               </p>{" "}
             </div>
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={webd} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2   text-center">
                 Website Development
               </p>
             </div>{" "}
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={appDev} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
                 App Development
               </p>
             </div>{" "}
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={ps} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
                 Social Media Marketing
               </p>
             </div>{" "}
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={webd} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
                 Premium Courses
               </p>
             </div>{" "}
             <div className="relative w-fit mx-auto h-auto">
               <img className=" relative" alt="ps" src={appDev} />
-              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2">
+              <p className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-center">
                 Custom Scripts
               </p>
             </div>
@@ -198,10 +224,10 @@ function Page() {
           ))}
         </main>
       </section>
-      <section className="mt-20">
+      <section className="mt-20 -mx-6">
         <div className="relative w-full max-w-screen-md  mx-auto h-auto">
           <img className=" relative" alt="contactBg" src={contactBg} />
-          <div className="absolute top-1/2 font-bold text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-white text-center">
+          <div className="absolute top-1/2 font-bold text-base md:text-xl -translate-y-1/2 left-1/2 -translate-x-1/2 text-white text-center">
             <p>Have Something diiferent in mind?</p>
             <p className="my-4">
               Do you want a script that we dont have listed?{" "}
@@ -212,11 +238,11 @@ function Page() {
           </div>
         </div>
       </section>
-      <section className="bg-[#F5EEE9] -mx-6 p-16 ">
-        <p className="font-bold text-xl md:text-2xl text-center mb-12">
+      <section className="bg-[#F5EEE9] -mx-6 p-6 md:p-16 mt-6 ">
+        <p className="font-bold text-xl md:text-2xl text-center mb:4 md:mb-12">
           What People Say About Us
         </p>
-        <div className="text-center p-12 bg-whit rounded-md  shadow-2xl max-w-screen-md mx-auto">
+        <div className="text-center p-4 md:p-12 bg-whit rounded-md  shadow-2xl max-w-screen-md mx-auto">
           <p className="text-xl">The Best Software Agency</p>
           <p className="font-semibold my-4">Alice from Trustpilot says: </p>
           <p className="md:text-lg text-base">
@@ -263,15 +289,13 @@ const NFTCard = () => {
 const StaffCard = ({ staffDetail, reverse }) => {
   return (
     <div
-      className={`flex justify-between gap-8 items-center ${
-        reverse ? "flex-row-reverse" : "flex-row"
+      className={`flex flex-col-reverse justify-between gap-8 items-center ${
+        reverse ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
-      <div className="text-base md:text-lg flex flex-col gap-4 max-w-80">
-        <p className="font-semibold">Need A Full Stack Web Developer?</p>
-        <p>
-          Do you need full stack mern website developers to freelance for you?
-        </p>
+      <div className="text-base md:text-lg flex flex-col gap-2 md:gap-4 items-center md:items-start text-center md:text-left max-w-80">
+        <p className="font-semibold">{staffDetail.text}</p>
+        <p>{staffDetail.details}</p>
         <button className="bg-[#FF6700] text-white w-fit px-8 py-2 rounded-md ">
           Contact
         </button>
